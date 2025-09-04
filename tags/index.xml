@@ -6,8 +6,64 @@
     <description>Recent content in Tags on Akshat Blogs</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Mar 2022 22:20:17 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 22 Apr 2022 00:00:00 +0530</lastBuildDate>
     <atom:link href="https://akshatjme.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Forward Proxy</title>
+      <link>https://akshatjme.github.io/tags/forward-proxy/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0530</pubDate>
+      <guid>https://akshatjme.github.io/tags/forward-proxy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Load Balancer</title>
+      <link>https://akshatjme.github.io/tags/load-balancer/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0530</pubDate>
+      <guid>https://akshatjme.github.io/tags/load-balancer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Load Balancing Strategies</title>
+      <link>https://akshatjme.github.io/tags/load-balancing-strategies/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0530</pubDate>
+      <guid>https://akshatjme.github.io/tags/load-balancing-strategies/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network Security</title>
+      <link>https://akshatjme.github.io/tags/network-security/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0530</pubDate>
+      <guid>https://akshatjme.github.io/tags/network-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Proxies</title>
+      <link>https://akshatjme.github.io/tags/proxies/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0530</pubDate>
+      <guid>https://akshatjme.github.io/tags/proxies/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reverse Proxy</title>
+      <link>https://akshatjme.github.io/tags/reverse-proxy/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0530</pubDate>
+      <guid>https://akshatjme.github.io/tags/reverse-proxy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Traffic Management</title>
+      <link>https://akshatjme.github.io/tags/web-traffic-management/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0530</pubDate>
+      <guid>https://akshatjme.github.io/tags/web-traffic-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web-Performance</title>
+      <link>https://akshatjme.github.io/tags/web-performance/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0530</pubDate>
+      <guid>https://akshatjme.github.io/tags/web-performance/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Backend</title>
       <link>https://akshatjme.github.io/tags/backend/</link>
@@ -83,13 +139,6 @@
       <link>https://akshatjme.github.io/tags/system-design/</link>
       <pubDate>Thu, 03 Mar 2022 22:20:17 +0530</pubDate>
       <guid>https://akshatjme.github.io/tags/system-design/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web-Performance</title>
-      <link>https://akshatjme.github.io/tags/web-performance/</link>
-      <pubDate>Thu, 03 Mar 2022 22:20:17 +0530</pubDate>
-      <guid>https://akshatjme.github.io/tags/web-performance/</guid>
       <description></description>
     </item>
   </channel>
