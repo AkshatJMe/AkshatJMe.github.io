@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <meta name="google-adsense-account" content="ca-pub-9468780746559938">
-    <title>Contact Us | Akshat Blogs</title>
+    <title>Latest Insights | Akshat Blogs</title>
     
     
-    <meta name="description" content="Get in touch with us. We&#39;d love to hear from you!">
+    <meta name="description" content="Stay updated with our newest blog posts and stories">
     <meta name="author" content="Akshat Jain">
     <meta name="keywords" content="">
     
     
-    <meta property="og:title" content="Contact Us">
-    <meta property="og:description" content="Get in touch with us. We&#39;d love to hear from you!">
+    <meta property="og:title" content="Latest Insights">
+    <meta property="og:description" content="Stay updated with our newest blog posts and stories">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://akshatjme.github.io/contact/">
+    <meta property="og:url" content="https://akshatjme.github.io/newsletter/">
     
     
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact Us">
-    <meta name="twitter:description" content="Get in touch with us. We&#39;d love to hear from you!">
+    <meta name="twitter:title" content="Latest Insights">
+    <meta name="twitter:description" content="Stay updated with our newest blog posts and stories">
     
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,57 +71,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Contact Us</title>
-  <meta name="description" content="Get in touch with us. We&#39;d love to hear from you!">
+  <title>Latest Insights</title>
+  <meta name="description" content="Stay updated with our newest blog posts and stories">
 
   
-  <meta property="og:title" content="Contact Us">
-  <meta property="og:description" content="Get in touch with us. We&#39;d love to hear from you!">
+  <meta property="og:title" content="Latest Insights">
+  <meta property="og:description" content="Stay updated with our newest blog posts and stories">
 
+  <style>
+
+  </style>
 </head>
 
 <body>
 
-  <main class="contact-page">
-    <header class="contact-header">
-      <h1>Contact Us</h1>
-      <p>Get in touch with us. We&#39;d love to hear from you!</p>
+  <main class="newsletter-page">
+    <header class="newsletter-header">
+      <h1>Latest Insights</h1>
+      <p>Stay updated with our newest blog posts and stories</p>
     </header>
 
-    <section class="contact-for">
-      <form id="contact-form" class="contact-form">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
-
+    <section class="newsletter-form">
+      <form id="newsletter-form" class="subscribe-form">
         <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button class="btn" type="submit">Send Message</button>
+        <button class="btn" type="submit">Subscribe</button>
       </form>
+
+      <div id="response-message" class="response-message">
+        <p>Thank you for subscribing! Check your inbox for the latest updates.</p>
+      </div>
+
+      <div id="error-message" class="error-message">
+        <p>Oops! Something went wrong. Please try again later.</p>
+      </div>
     </section>
   </main>
 
   <script>
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
+    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
       e.preventDefault();  
 
       
-      const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
 
       
       const formData = {
-        name: name,
-        email: email,
-        message: message
+        email: email
       };
 
-      
-      fetch('https://personal-blogs-v7i1.onrender.com/api/contacts/', {
+      fetch('https://personal-blogs-v7i1.onrender.com/api/newsletter/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -130,12 +130,13 @@
       })
       .then(response => response.json())
       .then(data => {
-        
-        document.getElementById('contact-form').reset();  
-
+        document.getElementById('newsletter-form').reset();
+        document.getElementById('response-message').style.display = 'block';
+        document.getElementById('error-message').style.display = 'none';
       })
       .catch(error => {
-        console.error('Error:', error);
+        document.getElementById('response-message').style.display = 'none';
+        document.getElementById('error-message').style.display = 'block';
       });
     });
   </script>
