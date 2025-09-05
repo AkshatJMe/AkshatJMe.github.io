@@ -10,6 +10,12 @@
   </url>
   
   <url>
+    <loc>https://akshatjme.github.io/contact/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://akshatjme.github.io/search/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
