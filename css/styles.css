@@ -1164,6 +1164,10 @@ a:hover {
   .post-title {
     font-size: 2rem;
   }
+
+  .post-card {
+    margin-top: 1rem;
+  }
   
   .section-title {
     font-size: 1.75rem;
