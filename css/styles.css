@@ -320,10 +320,10 @@ a:hover {
   display: flex;
   flex-direction: row;
   gap: var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
+  /* margin-bottom: var(--spacing-xl); */
   /* background: var(--bgSoft); */
   /* border-radius: var(--radius-md); */
-  padding: var(--spacing-sm);
+  /* padding: var(--spacing-sm); */
   overflow: hidden;
   transition: var(--transition);
 }
@@ -337,6 +337,10 @@ a:hover {
   border-radius: var(--radius-sm);
 }
 
+.post-card-image {
+  overflow: hidden; /* Ensure the border-radius is maintained on hover */
+}
+
 .post-card-image img {
   width: 100%;
   height: 100%;
@@ -347,6 +351,7 @@ a:hover {
 
 .post-card:hover .post-card-image img {
   transform: scale(1.05);
+  border-radius: var(--border-radius);
 }
 
 /* Post Content */
@@ -355,7 +360,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: var(--spacing-sm);
   padding: 0;
 }
 
@@ -396,24 +400,28 @@ a:hover {
 
 /* Author Info */
 .author-info {
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
-  gap: var(--spacing-xs);
+  display: flex; /* Use flexbox to align items side by side */
+  align-items: center; /* Vertically align the image and text */
+  justify-content: center; /* Center both elements horizontally */
+  gap: var(--spacing-xs); /* Spacing between image and name */
+  margin-bottom: 8px;
 }
 
 .author-avatar {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%; /* Make image round */
   object-fit: cover;
-  border: 2px solid var(--glass-border);
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 .author-name {
   font-weight: 600;
-  color: var(--text);
+  color: var(--text); /* Text color */
   font-size: 1rem;
+  display: flex; /* Allow text to center itself if it has multiple lines */
+  align-items: center; /* Ensure text is vertically centered */
 }
 
 /* Date */
