@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta name="google-adsense-account" content="ca-pub-9468780746559938">
+    <title>Speeding Up Systems With Smart Storage | Akshat Blogs</title>
+    
+    
+    <meta name="description" content="Caching is the hidden engine behind fast, responsive systems. This guide breaks down core caching concepts from hits and misses to eviction policies and write strategies—along with tools like Redis, Memcached, and CDNs that power real-world performance at scale.">
+    <meta name="author" content="akshat-jain">
+    <meta name="keywords" content="System Design, caching">
+    
+    
+    <meta property="og:title" content="Speeding Up Systems With Smart Storage">
+    <meta property="og:description" content="Caching is the hidden engine behind fast, responsive systems. This guide breaks down core caching concepts from hits and misses to eviction policies and write strategies—along with tools like Redis, Memcached, and CDNs that power real-world performance at scale.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:1313/blog/speeding-up-systems-with-smart-storage/">
+    <meta property="og:image" content="/images/blog/speeding-up-systems-with-smart-storage/caching.jpeg">
+    
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Speeding Up Systems With Smart Storage">
+    <meta name="twitter:description" content="Caching is the hidden engine behind fast, responsive systems. This guide breaks down core caching concepts from hits and misses to eviction policies and write strategies—along with tools like Redis, Memcached, and CDNs that power real-world performance at scale.">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Speeding Up Systems With Smart Storage",
+        "description": "Caching is the hidden engine behind fast, responsive systems. This guide breaks down core caching concepts from hits and misses to eviction policies and write strategies—along with tools like Redis, Memcached, and CDNs that power real-world performance at scale.",
+        "author": {
+            "@type": "Person",
+            "name": "akshat-jain"
+        },
+        "datePublished": "2022-03-03",
+        "dateModified": "2022-03-03",
+        "mainEntityOfPage": "http:\/\/localhost:1313\/blog\/speeding-up-systems-with-smart-storage\/"
+    }
+    </script>
+    
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9468780746559938"
+     crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+    <div class="container">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <h1>Blogs</h1>
+            </a>
+            
+            <nav class="navigation">
+                <ul class="nav-menu">
+                    
+                    <li><a href="/categories/" class="nav-link">Categories</a></li>
+                    
+                    <li><a href="/search/" class="nav-link">Search</a></li>
+                    
+                </ul>
+                
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌓</span>
+                </button>
+            </nav>
+        </div>
+    </div>
+</header>
+        
+        <main class="main-content">
+            
+<article class="blog-post">
+    <div class="container">
+        <div class="post-header">
+            
+            <div class="post-image">
+                <img src="/images/blog/speeding-up-systems-with-smart-storage/caching.jpeg" alt="Speeding Up Systems With Smart Storage" loading="lazy">
+            </div>
+            
+            
+            <div class="post-meta">
+                <h1 class="post-title">Speeding Up Systems With Smart Storage</h1>
+                <p class="post-description">Caching is the hidden engine behind fast, responsive systems. This guide breaks down core caching concepts from hits and misses to eviction policies and write strategies—along with tools like Redis, Memcached, and CDNs that power real-world performance at scale.</p>
+                
+                <div class="post-info">
+                    <div class="post-info-container">
+                        
+
+  
+    <div class="author-info">
+      <img src="/images/authors/avatar.webp" alt="Akshat Jain" class="author-avatar">
+      <div class="author-name">Akshat Jain</div>
+    </div>
+  
+
+
+                        <time datetime="2022-03-03">
+                            March 3, 2022
+                        </time>
+                    </div>
+                    
+                    <div class="post-details">
+                       
+                        
+                        <div class="tags">
+                            
+                            <a href="/tags/system-design" class="tag">#System Design</a>
+                            
+                            <a href="/tags/caching" class="tag">#caching</a>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <p>Caching involves storing frequently accessed data in a fast cache to reduce access latency.  Improves system performance by minimizing data retrieval time. Reduces redundancy in data access.</p>
+<h2 id="key-terms">Key Terms</h2>
+<h3 id="1-cache-miss">1. Cache Miss</h3>
+<p><strong>What It Is:</strong> Occurs when requested data isn&rsquo;t found in the cache.<br>
+<strong>Impact:</strong> Requires fetching data from slower main memory, increasing latency.</p>
+<h3 id="2-cache-hit">2. Cache Hit</h3>
+<p><strong>What It Is:</strong> Happens when requested data is found in the cache.<br>
+<strong>Impact:</strong> Allows quick retrieval, reducing access time.</p>
+<h3 id="3-cache-invalidation">3. Cache Invalidation</h3>
+<p><strong>Definition:</strong> Marking cached data as invalid or outdated.<br>
+<strong>Purpose:</strong> Ensures that stale data isn’t used.</p>
+<hr>
+<h2 id="cache-eviction-policy">Cache Eviction Policy</h2>
+<p><strong>Purpose:</strong> Decides which items to remove from the cache when full.</p>
+<ul>
+<li><strong>LRU (Least Recently Used):</strong> Evicts least recently accessed item.</li>
+<li><strong>LFU (Least Frequently Used):</strong> Evicts least frequently accessed item.</li>
+<li><strong>FIFO (First-In-First-Out):</strong> Evicts the oldest item.</li>
+<li><strong>Random Replacement:</strong> Evicts a random item.</li>
+<li><strong>MRU (Most Recently Used):</strong> Evicts most recently accessed item.</li>
+</ul>
+<hr>
+<h2 id="cache-write-strategy">Cache Write Strategy</h2>
+<ul>
+<li><strong>Write Through:</strong> Writes to both cache and main memory (ensures consistency, higher latency).</li>
+<li><strong>Write Back:</strong> Writes to cache first, updates main memory later (fast but risk of inconsistency).</li>
+<li><strong>Write Around:</strong> Writes directly to main memory, bypassing cache (avoids unnecessary caching).</li>
+</ul>
+<hr>
+<h2 id="differences-between-cache-and-databases">Differences Between Cache and Databases</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Cache</th>
+          <th>Database</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Purpose</td>
+          <td>Performance enhancement</td>
+          <td>Structured data storage</td>
+      </tr>
+      <tr>
+          <td>Data Durability</td>
+          <td>Sacrifices persistence</td>
+          <td>Prioritizes durability</td>
+      </tr>
+      <tr>
+          <td>Latency</td>
+          <td>Low</td>
+          <td>Higher</td>
+      </tr>
+      <tr>
+          <td>Data Management</td>
+          <td>Lightweight structures</td>
+          <td>Complex management</td>
+      </tr>
+      <tr>
+          <td>Lifespan</td>
+          <td>Short-term</td>
+          <td>Long-term</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="distributed-cache">Distributed Cache</h2>
+<p><strong>Definition:</strong> A caching system across multiple nodes.<br>
+<strong>Benefits:</strong> Improves scalability, availability, and performance.</p>
+<hr>
+<h2 id="caching-tools">Caching Tools</h2>
+<ul>
+<li><strong>Redis:</strong> In-memory store, supports data structures, persistence, distributed caching.</li>
+<li><strong>Memcached:</strong> Optimized for quick lookups, distributed, no persistence.</li>
+</ul>
+<hr>
+<h2 id="content-delivery-network-cdn">Content Delivery Network (CDN)</h2>
+<p><strong>Definition:</strong> Distributed servers for efficient content delivery.</p>
+<h3 id="why-cdns-are-needed">Why CDNs Are Needed</h3>
+<ul>
+<li>Reduces latency</li>
+<li>Global reach</li>
+<li>Scalability</li>
+<li>Load balancing</li>
+<li>Content caching</li>
+<li>Dynamic content acceleration</li>
+<li>Security &amp; reliability</li>
+<li>Improved user experience</li>
+<li>Bandwidth savings</li>
+</ul>
+<h3 id="examples-of-cdns">Examples of CDNs</h3>
+<p>Akamai, Cloudflare, Amazon CloudFront, Microsoft Azure CDN, KeyCDN, Cachefly.</p>
+
+        </div>
+        
+        
+    </div>
+</article>
+
+        </main>
+        
+        <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <ul class="footer-links">
+                    <li><a href="/categories">Categories</a></li>
+                    <li><a href="/newsletter">Newsletter</a></li>
+                    <li><a href="/contact">Contacts</a></li>
+                </ul>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://twitter.com/AkshatJMe" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/AkshatJMe" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/AkshatJMe" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>

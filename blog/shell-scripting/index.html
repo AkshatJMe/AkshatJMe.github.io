@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta name="google-adsense-account" content="ca-pub-9468780746559938">
+    <title>Shell Scripting | Akshat Blogs</title>
+    
+    
+    <meta name="description" content="Kickstart your automation journey with this beginner-friendly guide to Shell Scripting! Learn how to write powerful shell scripts using basic commands, variables, conditionals, loops, functions, and more. Whether you&#39;re printing Hello, World! or handling user input, this guide walks you through the core concepts step by step. Perfect for developers, sysadmins, and curious learners eager to harness the command line.">
+    <meta name="author" content="akshat-jain">
+    <meta name="keywords" content="">
+    
+    
+    <meta property="og:title" content="Shell Scripting">
+    <meta property="og:description" content="Kickstart your automation journey with this beginner-friendly guide to Shell Scripting! Learn how to write powerful shell scripts using basic commands, variables, conditionals, loops, functions, and more. Whether you&#39;re printing Hello, World! or handling user input, this guide walks you through the core concepts step by step. Perfect for developers, sysadmins, and curious learners eager to harness the command line.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:1313/blog/shell-scripting/">
+    <meta property="og:image" content="/images/blog/shell-scripting/shell-scripting-thumb.webp">
+    
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shell Scripting">
+    <meta name="twitter:description" content="Kickstart your automation journey with this beginner-friendly guide to Shell Scripting! Learn how to write powerful shell scripts using basic commands, variables, conditionals, loops, functions, and more. Whether you&#39;re printing Hello, World! or handling user input, this guide walks you through the core concepts step by step. Perfect for developers, sysadmins, and curious learners eager to harness the command line.">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Shell Scripting",
+        "description": "Kickstart your automation journey with this beginner-friendly guide to Shell Scripting! Learn how to write powerful shell scripts using basic commands, variables, conditionals, loops, functions, and more. Whether you\u0027re printing Hello, World! or handling user input, this guide walks you through the core concepts step by step. Perfect for developers, sysadmins, and curious learners eager to harness the command line.",
+        "author": {
+            "@type": "Person",
+            "name": "akshat-jain"
+        },
+        "datePublished": "2024-01-08",
+        "dateModified": "2024-01-08",
+        "mainEntityOfPage": "http:\/\/localhost:1313\/blog\/shell-scripting\/"
+    }
+    </script>
+    
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9468780746559938"
+     crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+    <div class="container">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <h1>Blogs</h1>
+            </a>
+            
+            <nav class="navigation">
+                <ul class="nav-menu">
+                    
+                    <li><a href="/categories/" class="nav-link">Categories</a></li>
+                    
+                    <li><a href="/search/" class="nav-link">Search</a></li>
+                    
+                </ul>
+                
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌓</span>
+                </button>
+            </nav>
+        </div>
+    </div>
+</header>
+        
+        <main class="main-content">
+            
+<article class="blog-post">
+    <div class="container">
+        <div class="post-header">
+            
+            <div class="post-image">
+                <img src="/images/blog/shell-scripting/shell-scripting-thumb.webp" alt="Shell Scripting" loading="lazy">
+            </div>
+            
+            
+            <div class="post-meta">
+                <h1 class="post-title">Shell Scripting</h1>
+                <p class="post-description">Kickstart your automation journey with this beginner-friendly guide to Shell Scripting! Learn how to write powerful shell scripts using basic commands, variables, conditionals, loops, functions, and more. Whether you&#39;re printing Hello, World! or handling user input, this guide walks you through the core concepts step by step. Perfect for developers, sysadmins, and curious learners eager to harness the command line.</p>
+                
+                <div class="post-info">
+                    <div class="post-info-container">
+                        
+
+  
+    <div class="author-info">
+      <img src="/images/authors/avatar.webp" alt="Akshat Jain" class="author-avatar">
+      <div class="author-name">Akshat Jain</div>
+    </div>
+  
+
+
+                        <time datetime="2024-01-08">
+                            January 8, 2024
+                        </time>
+                    </div>
+                    
+                    <div class="post-details">
+                       
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <ul>
+<li>Shell scripting is a way to automate tasks by writing scripts (sequences of commands) in a text file, which the shell can execute.</li>
+</ul>
+<h3 id="basic-shell-scripting-commands"><strong>Basic Shell Scripting Commands:</strong></h3>
+<h3 id="1-binbash">1. <strong><code>#!/bin/bash</code></strong></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> This is called the <em>shebang</em> line. It specifies the interpreter for the script (in this case, Bash). The script will be executed by the Bash shell.</p>
+</li>
+<li>
+<p><strong>Example:</strong> This script will print &ldquo;Hello, World!&rdquo; to the screen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>echo <span style="color:#e6db74">&#34;Hello, World!&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="2-echo">2. <strong><code>echo</code></strong></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> The <code>echo</code> command is used to print a message or the value of a variable to the terminal.</p>
+</li>
+<li>
+<p><strong>Usage :Example:</strong></p>
+<ul>
+<li><code>echo &quot;Message&quot;</code> – Prints a string to the terminal.</li>
+<li><code>echo $variable</code> – Prints the value stored in a variable.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Hello, World!&#34;</span>
+</span></span><span style="display:flex;"><span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Alice&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Hello, </span>$name<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="3-variables">3. <strong>Variables</strong></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Variables are used to store data that can be reused later in the script.</p>
+</li>
+<li>
+<p><strong>Usage: Example:</strong></p>
+<ul>
+<li><code>variable_name=&quot;value&quot;</code> – Declare and assign a value to a variable.</li>
+<li><code>echo $variable_name</code> – Access the value of a variable.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Alice&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Hello, </span>$name<span style="color:#e6db74">&#34;</span>  <span style="color:#75715e"># Output: Hello, Alice</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="4-conditionals-ifelse">4. <strong>Conditionals (if/else)</strong></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Conditional statements allow the execution of commands based on whether a condition is true or false.</p>
+</li>
+<li>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> condition <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># command if condition is true</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># command if condition is false</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>number<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>  <span style="color:#75715e"># No spaces around &#39;=&#39; in variable assignment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$number<span style="color:#e6db74">&#34;</span> -eq <span style="color:#ae81ff">5</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;The number is 5 buddy&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Teri lowwde&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $name <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Alice&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Hello, Alice!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;You&#39;re not Alice.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>This checks if the variable <code>name</code> is equal to &ldquo;Alice&rdquo; and prints a message accordingly.</p>
+</li>
+</ul>
+<h3 id="5-loops-forwhile">5. <strong>Loops (for/while)</strong></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Loops allow repeated execution of commands. Useful for iterating over items or performing repetitive tasks.</p>
+</li>
+<li>
+<p><strong>For Loop:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> 3; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Loop </span>$i<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><ul>
+<li>This will loop through the numbers 1, 2, and 3, printing each one.</li>
+</ul>
+</li>
+<li>
+<p><strong>While Loop:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>count<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> $count -le <span style="color:#ae81ff">5</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Counter: </span>$count<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">((</span>count++<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><ul>
+<li>This will increment <code>count</code> from 1 to 5 and print the value of <code>count</code> each time.</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-reading-input">6. <strong>Reading Input</strong></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Accept user input during the execution of a script.</p>
+</li>
+<li>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>read variable_name
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;You entered: </span>$variable_name<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Enter your name:&#34;</span>
+</span></span><span style="display:flex;"><span>read name
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Hello, </span>$name<span style="color:#e6db74">!&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="7-functions">7. <strong>Functions</strong></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Functions allow you to group related commands together and reuse them within your script.</p>
+</li>
+<li>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>my_function<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;This is a function&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>my_function  <span style="color:#75715e"># Call the function</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>greet<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Hello, </span>$1<span style="color:#e6db74">!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>greet <span style="color:#e6db74">&#34;Alice&#34;</span>  <span style="color:#75715e"># Output: Hello, Alice!</span>
+</span></span></code></pre></div><ul>
+<li><code>$1</code> refers to the first argument passed to the function.</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-making-a-script-executable">8. <strong>Making a Script Executable</strong></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Allows you to run a script as if it were a command from the terminal.</p>
+</li>
+<li>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>
+<p><strong>Make the script executable</strong> using <code>chmod</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x script_name.sh
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Run the script</strong> by calling it directly:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./script_name.sh
+</span></span></code></pre></div></li>
+</ol>
+<p>This allows you to execute the script without explicitly invoking the interpreter (e.g., <code>bash script_name.sh</code>).</p>
+</li>
+</ul>
+<h3 id="9-comments">9. <strong>Comments</strong></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Comments are used to explain parts of your script and make it easier to understand.</p>
+</li>
+<li>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># This is a single-line comment</span>
+</span></span></code></pre></div><p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># This script greets the user</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Hello, User!&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="10-file-redirection-and-pipes">10. <strong>File Redirection and Pipes</strong></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Shell scripting allows you to redirect input/output or pipe the output of one command to another.</p>
+<ul>
+<li><strong>Redirection:</strong>
+<ul>
+<li><code>&gt;</code> – Redirects output to a file (overwrites).</li>
+<li><code>&gt;&gt;</code> – Redirects output to a file (appends).</li>
+</ul>
+</li>
+<li><strong>Pipes:</strong>
+<ul>
+<li><code>|</code> – Pipes the output of one command to another.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Hello, World!&#34;</span> &gt; output.txt   <span style="color:#75715e"># Redirects to a file</span>
+</span></span><span style="display:flex;"><span>cat output.txt                     <span style="color:#75715e"># Display the contents of output.txt</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ls | grep <span style="color:#e6db74">&#34;file&#34;</span>                   <span style="color:#75715e"># Pipe the output of ls to grep</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="11-exit-status">11. <strong>Exit Status</strong></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Every command in a script returns an exit status code, which indicates whether the command was successful.</p>
+<ul>
+<li><code>0</code> – Success</li>
+<li>Non-zero – Error</li>
+</ul>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $? -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Last command was successful.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Last command failed.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div></li>
+</ul>
+
+        </div>
+        
+        
+    </div>
+</article>
+
+        </main>
+        
+        <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <ul class="footer-links">
+                    <li><a href="/categories">Categories</a></li>
+                    <li><a href="/newsletter">Newsletter</a></li>
+                    <li><a href="/contact">Contacts</a></li>
+                </ul>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://twitter.com/AkshatJMe" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/AkshatJMe" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/AkshatJMe" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>

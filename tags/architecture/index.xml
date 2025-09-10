@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Architecture on Akshat Blogs</title>
+    <link>http://localhost:1313/tags/architecture/</link>
+    <description>Recent content in Architecture on Akshat Blogs</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2023 00:00:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monolith vs Microservices</title>
+      <link>http://localhost:1313/blog/monolith-vs-microservices/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/monolith-vs-microservices/</guid>
+      <description>&lt;p&gt;When building a software application, there are two popular ways to organize the code and services: &lt;strong&gt;Monolithic Architecture&lt;/strong&gt; and &lt;strong&gt;Microservices Architecture&lt;/strong&gt;. Let’s break down what these mean, their pros and cons, and when to use each.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;what-is-monolithic-architecture&#34;&gt;What is Monolithic Architecture?&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Monolithic architecture&lt;/strong&gt; means building an application as one big, single unit. Everything — the user interface, business logic, and database access — is combined into one codebase and runs together.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
